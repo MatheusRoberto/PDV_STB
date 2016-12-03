@@ -31,7 +31,8 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         initComponents();
     }
     List<Cliente> vetorcliente = new ArrayList<>();
-
+    Cliente cliente;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -113,32 +114,32 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Cadastro de Cliente");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 22, 232, 29);
+        jLabel1.setBounds(0, 22, 263, 29);
 
         lblnome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblnome.setText("Nome:");
         getContentPane().add(lblnome);
-        lblnome.setBounds(0, 170, 52, 22);
+        lblnome.setBounds(0, 170, 59, 22);
 
         lblcnpj.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblcnpj.setText("CNPJ:");
         getContentPane().add(lblcnpj);
-        lblcnpj.setBounds(0, 270, 47, 22);
+        lblcnpj.setBounds(0, 270, 50, 22);
 
         lblcpf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblcpf.setText("CPF:");
         getContentPane().add(lblcpf);
-        lblcpf.setBounds(0, 210, 36, 22);
+        lblcpf.setBounds(0, 210, 40, 22);
 
         lbltelefone.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbltelefone.setText("Telefone:");
         getContentPane().add(lbltelefone);
-        lbltelefone.setBounds(0, 300, 74, 22);
+        lbltelefone.setBounds(0, 300, 84, 22);
 
         lblemail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblemail.setText("Email:");
         getContentPane().add(lblemail);
-        lblemail.setBounds(0, 330, 48, 22);
+        lblemail.setBounds(0, 330, 54, 22);
 
         txtnome.setEnabled(false);
         txtnome.addActionListener(new java.awt.event.ActionListener() {
@@ -147,11 +148,11 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtnome);
-        txtnome.setBounds(60, 180, 202, 20);
+        txtnome.setBounds(60, 180, 202, 19);
 
         txttelefone.setEnabled(false);
         getContentPane().add(txttelefone);
-        txttelefone.setBounds(80, 300, 178, 20);
+        txttelefone.setBounds(80, 300, 178, 19);
 
         txtemail.setEnabled(false);
         getContentPane().add(txtemail);
@@ -159,6 +160,11 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/1474678595_Human.png"))); // NOI18N
         jButton1.setText("Cadastro CLiente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/1474678780_3d_box.png"))); // NOI18N
         jButton3.setText("Produtos");
@@ -207,7 +213,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 660, 719, 48);
+        jPanel1.setBounds(0, 660, 847, 49);
 
         try {
             txtcpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -221,7 +227,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtcpf);
-        txtcpf.setBounds(40, 210, 216, 20);
+        txtcpf.setBounds(40, 210, 216, 19);
 
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/1476343190_sent.png"))); // NOI18N
         btnEnviar.setEnabled(false);
@@ -241,7 +247,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLimpar);
-        btnLimpar.setBounds(170, 620, 65, 33);
+        btnLimpar.setBounds(170, 620, 66, 33);
 
         btnFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/1476343200_cross-24.png"))); // NOI18N
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +256,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFechar);
-        btnFechar.setBounds(250, 620, 65, 33);
+        btnFechar.setBounds(250, 620, 66, 33);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Endereço");
@@ -268,23 +274,23 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
 
         btnPesquisar.setText("...");
         getContentPane().add(btnPesquisar);
-        btnPesquisar.setBounds(270, 180, 32, 23);
+        btnPesquisar.setBounds(270, 180, 32, 25);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Cod:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 73, 37, 22);
+        jLabel5.setBounds(0, 73, 41, 22);
         getContentPane().add(txtcod);
-        txtcod.setBounds(41, 77, 40, 20);
+        txtcod.setBounds(41, 77, 40, 19);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Razão Social:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 240, 104, 22);
+        jLabel6.setBounds(0, 240, 116, 22);
 
         txtrazaosocial.setEnabled(false);
         getContentPane().add(txtrazaosocial);
-        txtrazaosocial.setBounds(110, 240, 145, 20);
+        txtrazaosocial.setBounds(110, 240, 145, 19);
 
         try {
             txtcnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
@@ -293,7 +299,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         }
         txtcnpj.setEnabled(false);
         getContentPane().add(txtcnpj);
-        txtcnpj.setBounds(60, 270, 200, 20);
+        txtcnpj.setBounds(60, 270, 200, 19);
 
         txtbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +341,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnpessoajuridica);
-        btnpessoajuridica.setBounds(10, 130, 99, 23);
+        btnpessoajuridica.setBounds(10, 130, 133, 23);
 
         buttonGroup1.add(btnpessoafisica);
         btnpessoafisica.setText("Pessoa Fisica");
@@ -345,7 +351,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnpessoafisica);
-        btnpessoafisica.setBounds(120, 130, 89, 23);
+        btnpessoafisica.setBounds(120, 130, 121, 23);
 
         lblogradouro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblogradouro.setText("Logradouro:");
@@ -354,7 +360,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
 
         txtlogradouro.setEnabled(false);
         getContentPane().add(txtlogradouro);
-        txtlogradouro.setBounds(100, 460, 200, 20);
+        txtlogradouro.setBounds(100, 460, 200, 19);
 
         lbestado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbestado.setText("Estado:");
@@ -364,11 +370,11 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         lbcidade.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbcidade.setText("Cidade:");
         getContentPane().add(lbcidade);
-        lbcidade.setBounds(0, 430, 59, 22);
+        lbcidade.setBounds(0, 430, 67, 22);
 
         txtcidade.setEnabled(false);
         getContentPane().add(txtcidade);
-        txtcidade.setBounds(60, 430, 210, 20);
+        txtcidade.setBounds(60, 430, 210, 19);
 
         lbcep.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbcep.setText("CEP:");
@@ -378,29 +384,29 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         lbcomplemento.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbcomplemento.setText("Complemento:");
         getContentPane().add(lbcomplemento);
-        lbcomplemento.setBounds(0, 550, 115, 22);
+        lbcomplemento.setBounds(0, 550, 131, 22);
 
         txtcomplemento.setEnabled(false);
         getContentPane().add(txtcomplemento);
-        txtcomplemento.setBounds(120, 550, 180, 20);
+        txtcomplemento.setBounds(120, 550, 180, 19);
 
         lbnumero.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbnumero.setText("Numero:");
         getContentPane().add(lbnumero);
-        lbnumero.setBounds(0, 580, 68, 22);
+        lbnumero.setBounds(0, 580, 78, 22);
 
         txtnumero.setEnabled(false);
         getContentPane().add(txtnumero);
-        txtnumero.setBounds(80, 580, 230, 20);
+        txtnumero.setBounds(80, 580, 230, 19);
 
         lbbairro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbbairro.setText("Bairro:");
         getContentPane().add(lbbairro);
-        lbbairro.setBounds(0, 520, 52, 22);
+        lbbairro.setBounds(0, 520, 60, 22);
 
         txtbairro.setEnabled(false);
         getContentPane().add(txtbairro);
-        txtbairro.setBounds(60, 520, 240, 20);
+        txtbairro.setBounds(60, 520, 240, 19);
 
         btnbuscarCep.setText("Buscar");
         btnbuscarCep.addActionListener(new java.awt.event.ActionListener() {
@@ -409,7 +415,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnbuscarCep);
-        btnbuscarCep.setBounds(290, 400, 65, 23);
+        btnbuscarCep.setBounds(290, 400, 82, 25);
 
         try {
             txtcep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
@@ -418,21 +424,21 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         }
         txtcep.setEnabled(false);
         getContentPane().add(txtcep);
-        txtcep.setBounds(40, 400, 220, 20);
+        txtcep.setBounds(40, 400, 220, 19);
 
         cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC ", "AL ", "AP ", "AM ", "BA ", "CE ", "DF ", "ES ", "MA ", "MT ", "MS ", "MG ", "PA ", "PB ", "PR ", "PE ", "PI ", "RJ ", "RN ", "RS ", "RO ", "RR ", "SC ", "SP ", "SE ", "TO" }));
         getContentPane().add(cbEstado);
-        cbEstado.setBounds(60, 490, 230, 20);
+        cbEstado.setBounds(60, 490, 230, 24);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Nome");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(360, 130, 41, 17);
+        jLabel2.setBounds(360, 130, 45, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("CPF/CNPJ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(330, 150, 72, 17);
+        jLabel4.setBounds(330, 150, 71, 17);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Email");
@@ -673,7 +679,14 @@ txtnumero.setEnabled(true);    }//GEN-LAST:event_btnpessoafisicaActionPerformed
 
     private void listbuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listbuscarMouseClicked
         int linha = listbuscar.getSelectedIndex();
+        Cliente clientes = (Cliente) vetorcliente.get(linha);
+        preencheCliente(String.valueOf(clientes.getIdCliente()));
+        cliente = clientes;
     }//GEN-LAST:event_listbuscarMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -772,5 +785,25 @@ txtnumero.setEnabled(true);    }//GEN-LAST:event_btnpessoafisicaActionPerformed
     private javax.swing.JTextField txtrazaosocial;
     private javax.swing.JTextField txttelefone;
     // End of variables declaration//GEN-END:variables
+
+    
+            private void preencheCliente(String codigo) {
+        ClienteDAO cDao = new  ClienteDAO();
+        cliente = cDao.buscaCodigo(Integer.valueOf(codigo));
+        txtbairro.setText(cliente.getEndereco().getBairro());
+        txtcep.setText(cliente.getEndereco().getCep());
+        txtcidade.setText(cliente.getEndereco().getCidade());
+        txtcnpj.setText(cliente.getCnpjCpf());
+        txtcod.setText(String.valueOf(cliente.getIdCliente()));
+        txtcomplemento.setText(cliente.getEndereco().getComplemento());
+        txtcpf.setText(cliente.getCnpjCpf());
+        txtemail.setText(cliente.getEmail());
+        txtlogradouro.setText(cliente.getEndereco().getLogradouro());
+        txtnome.setText(cliente.getNome());
+        txtnumero.setText(cliente.getEndereco().getNumero());
+        txtrazaosocial.setText(cliente.getRazaoSocial());
+        txttelefone.setText(cliente.getTelefone());
+        }
+
 
 }

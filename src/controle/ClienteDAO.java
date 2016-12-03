@@ -36,11 +36,15 @@ public class ClienteDAO {
         List<Cliente>vetorClientes;
         vetorClientes = (List<Cliente>)query.list();
        
-        return vetorClientes;
-    
-    
-       
+        return vetorClientes;   
     }
 
+    public Cliente buscaCodigo(int codigo){
+        String sql = "from Cliente where IdCliente = :cod";
+        Query query = sessao.createQuery(sql);
+        query.setInteger("cod", codigo);
+        Cliente cliente = (Cliente) query.uniqueResult();
+        return cliente;
+    }
     
 }
