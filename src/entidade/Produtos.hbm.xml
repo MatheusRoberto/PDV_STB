@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.Produtos" table="produtos" catalog="tccpdv" optimistic-lock="version">
+        <id name="idProdutos" type="java.lang.Integer">
+            <column name="idProdutos" />
+            <generator class="identity" />
+        </id>
+        <property name="produtoNome" type="string">
+            <column name="Produto_Nome" length="45" />
+        </property>
+        <property name="produtoCor" type="string">
+            <column name="Produto_Cor" length="45" />
+        </property>
+        <property name="produtoTipo" type="string">
+            <column name="Produto_Tipo" length="45" />
+        </property>
+        <property name="produtoMarca" type="string">
+            <column name="Produto_Marca" length="45" />
+        </property>
+        <property name="produtoQuantidade" type="java.lang.Integer">
+            <column name="Produto_Quantidade" />
+        </property>
+        <set name="produtosUtilizadoses" table="produtos_utilizados" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Produtos_idProdutos" not-null="true" />
+            </key>
+            <one-to-many class="entidade.ProdutosUtilizados" />
+        </set>
+    </class>
+</hibernate-mapping>

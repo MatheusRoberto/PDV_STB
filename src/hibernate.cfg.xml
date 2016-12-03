@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tccpdv?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="entidade/Eventos.hbm.xml"/>
+    <mapping resource="entidade/Cargo.hbm.xml"/>
+    <mapping resource="entidade/Stand.hbm.xml"/>
+    <mapping resource="entidade/Cliente.hbm.xml"/>
+    <mapping resource="entidade/ProdutosUtilizados.hbm.xml"/>
+    <mapping resource="entidade/Endereco.hbm.xml"/>
+    <mapping resource="entidade/Produtos.hbm.xml"/>
+    <mapping resource="entidade/Funcionario.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

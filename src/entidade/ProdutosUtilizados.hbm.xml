@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.ProdutosUtilizados" table="produtos_utilizados" catalog="tccpdv" optimistic-lock="version">
+        <id name="idProdutosUtilizados" type="java.lang.Integer">
+            <column name="IdProdutos_Utilizados" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="produtos" class="entidade.Produtos" fetch="select">
+            <column name="Produtos_idProdutos" not-null="true" />
+        </many-to-one>
+        <many-to-one name="stand" class="entidade.Stand" fetch="select">
+            <column name="Stand_idStand" not-null="true" />
+        </many-to-one>
+        <property name="observacao" type="string">
+            <column name="Observacao" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

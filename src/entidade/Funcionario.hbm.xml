@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.Funcionario" table="funcionario" catalog="tccpdv" optimistic-lock="version">
+        <id name="idfuncionario" type="java.lang.Integer">
+            <column name="idfuncionario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cargo" class="entidade.Cargo" fetch="select">
+            <column name="Cargo_idCargo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="endereco" class="entidade.Endereco" fetch="select">
+            <column name="Endereco_idEndereco" not-null="true" />
+        </many-to-one>
+        <property name="cpf" type="string">
+            <column name="CPF" length="45" not-null="true" />
+        </property>
+        <property name="rg" type="string">
+            <column name="RG" length="45" />
+        </property>
+        <property name="nome" type="string">
+            <column name="NOME" length="45" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="SEXO" length="45" />
+        </property>
+        <property name="cnh" type="string">
+            <column name="CNH" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.Endereco" table="endereco" catalog="tccpdv" optimistic-lock="version">
+        <id name="idEndereco" type="java.lang.Integer">
+            <column name="idEndereco" />
+            <generator class="identity" />
+        </id>
+        <property name="logradouro" type="string">
+            <column name="Logradouro" />
+        </property>
+        <property name="estado" type="string">
+            <column name="Estado" length="2" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="Cidade" length="45" />
+        </property>
+        <property name="cep" type="string">
+            <column name="CEP" length="9" />
+        </property>
+        <property name="complemento" type="string">
+            <column name="Complemento" length="45" />
+        </property>
+        <property name="numero" type="string">
+            <column name="Numero" length="45" />
+        </property>
+        <property name="bairro" type="string">
+            <column name="Bairro" length="45" />
+        </property>
+        <set name="eventoses" table="eventos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Endereco_idEndereco" not-null="true" />
+            </key>
+            <one-to-many class="entidade.Eventos" />
+        </set>
+        <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Endereco_idEndereco" not-null="true" />
+            </key>
+            <one-to-many class="entidade.Cliente" />
+        </set>
+        <set name="funcionarios" table="funcionario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Endereco_idEndereco" not-null="true" />
+            </key>
+            <one-to-many class="entidade.Funcionario" />
+        </set>
+    </class>
+</hibernate-mapping>

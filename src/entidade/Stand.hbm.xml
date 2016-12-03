@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.Stand" table="stand" catalog="tccpdv" optimistic-lock="version">
+        <id name="idStand" type="java.lang.Integer">
+            <column name="idStand" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="entidade.Cliente" fetch="select">
+            <column name="Cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="eventos" class="entidade.Eventos" fetch="select">
+            <column name="Eventos_idEventos" not-null="true" />
+        </many-to-one>
+        <property name="localizacao" type="string">
+            <column name="Localizacao" />
+        </property>
+        <property name="precoServico" type="java.lang.Float">
+            <column name="Preco_Servico" precision="12" scale="0" />
+        </property>
+        <set name="produtosUtilizadoses" table="produtos_utilizados" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stand_idStand" not-null="true" />
+            </key>
+            <one-to-many class="entidade.ProdutosUtilizados" />
+        </set>
+    </class>
+</hibernate-mapping>

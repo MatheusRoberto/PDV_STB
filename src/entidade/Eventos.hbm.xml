@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21/11/2016 20:40:49 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidade.Eventos" table="eventos" catalog="tccpdv" optimistic-lock="version">
+        <id name="idEventos" type="java.lang.Integer">
+            <column name="idEventos" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="endereco" class="entidade.Endereco" fetch="select">
+            <column name="Endereco_idEndereco" not-null="true" />
+        </many-to-one>
+        <property name="nomeEvento" type="string">
+            <column name="Nome_Evento" length="45" />
+        </property>
+        <property name="dataInicio" type="string">
+            <column name="Data_Inicio" length="45" />
+        </property>
+        <property name="dataFinal" type="string">
+            <column name="Data_Final" length="45" />
+        </property>
+        <set name="stands" table="stand" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Eventos_idEventos" not-null="true" />
+            </key>
+            <one-to-many class="entidade.Stand" />
+        </set>
+    </class>
+</hibernate-mapping>

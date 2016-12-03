@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="tccpdv"/>
+  <table-filter match-name="produtos"/>
+  <table-filter match-name="stand"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="produtos_utilizados"/>
+  <table-filter match-name="eventos"/>
+  <table-filter match-name="cargo"/>
+  <table-filter match-name="endereco"/>
+  <table-filter match-name="funcionario"/>
+</hibernate-reverse-engineering>
