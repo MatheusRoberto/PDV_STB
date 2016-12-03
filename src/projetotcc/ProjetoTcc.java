@@ -5,6 +5,8 @@
  */
 package projetotcc;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author bieuu
@@ -16,6 +18,10 @@ public class ProjetoTcc {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        JFrame janela = new Tela_Inicial1();
+        janela.setVisible(true);
+        janela.setLocationRelativeTo(null);
+        
     }
     
 }
