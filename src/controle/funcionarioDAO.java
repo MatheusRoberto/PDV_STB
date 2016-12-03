@@ -7,6 +7,7 @@ package controle;
 
 import entidade.Funcionario;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -25,5 +26,12 @@ public class funcionarioDAO {
         sessao.save(fun);
         t.commit();
     }
-
+    
+    public Funcionario buscaFuncionario(int codigo){
+        String sql = "from Funcionario where idfuncionario = :cod";
+        Query query = sessao.createQuery(sql);
+        query.setInteger("cod", codigo);
+        Funcionario funcionario = (Funcionario) query.uniqueResult();
+        return funcionario;
+    }
 }

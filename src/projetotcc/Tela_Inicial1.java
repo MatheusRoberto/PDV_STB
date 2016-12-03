@@ -199,12 +199,12 @@ public class Tela_Inicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_cliente2MouseClicked
 
     private void cliente2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cliente2MouseEntered
-       // agenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/trabalhador_2.png")));
+       cliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/trabalhador_2.png")));
     }//GEN-LAST:event_cliente2MouseEntered
 
     private void cliente2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cliente2MouseExited
         // TODO add your handling code here:
-        agenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/trabalhador_1.png")));
+        cliente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/trabalhador_1.png")));
     }//GEN-LAST:event_cliente2MouseExited
 
     private void agendaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agendaMouseEntered
